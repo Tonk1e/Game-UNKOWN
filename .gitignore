@@ -1,6 +1,5 @@
 /.metadata/
 /.recommenders/
 *.project
-*.classpath
 /build/
 /dist/

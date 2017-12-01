@@ -1,5 +1,10 @@
 /.metadata/
 /.recommenders/
 *.project
+<<<<<<< HEAD
 *.classpath
 /bin/
+=======
+/build/
+/dist/
+>>>>>>> 075fcc3453d47c2ef049a2c1f7d7ca2d36c1ac23

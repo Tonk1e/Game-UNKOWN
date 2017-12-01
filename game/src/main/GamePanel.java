@@ -34,7 +34,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	// State manager shiz
 	private GameStateManager gsm;
 
-	public void create_frame(){
+	public void createFrame(){
 		JFrame window = new JFrame("Game-UNKNOWN");
 		window.setContentPane(new GamePanel());
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

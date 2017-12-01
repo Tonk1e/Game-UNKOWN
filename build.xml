@@ -1,37 +1,39 @@
-<project name="MyProject" default="dist" basedir=".">
-  <description>
-    simple example build file
-  </description>
-  <!-- set global properties for this build -->
-  <property name="src" location="game/src"/>
-  <property name="build" location="build"/>
-  <property name="dist" location="dist"/>
+<?xml version="1.0" ?>
+<project name="Joni" default="build">
 
-  <target name="init">
-    <!-- Create the time stamp -->
-    <tstamp/>
-    <!-- Create the build directory structure used by compile -->
-    <mkdir dir="${build}"/>
-  </target>
+    <property name="src.dir" value="src" />
+    <property name="bin.dir" value="target/classes" />
+    <property name="dist.dir" value="target" />
+    <property name="jar.name" value="joni.jar" />
 
-  <target name="compile" depends="init"
-        description="compile the source">
-    <!-- Compile the java code from ${src} into ${build} -->
-    <javac srcdir="${src}" destdir="${build}"/>
-  </target>
+    <target name="clean">
+        <delete dir="${bin.dir}" />
+        <delete dir="${dist.dir}" />
 
-  <target name="dist" depends="compile"
-        description="generate the distribution">
-    <!-- Create the distribution directory -->
-    <mkdir dir="${dist}/lib"/>
+    </target>
 
-    <jar jarfile="${dist}/lib/Game-UNKNOWN.jar" basedir="${build}"/>
-  </target>
+    <target name="compile">
+        <mkdir dir="${bin.dir}" />
+        <javac srcdir="${src.dir}" destdir="${bin.dir}"/>
+    </target>
 
-  <target name="clean"
-        description="clean up">
-    <!-- Delete the ${build} and ${dist} directory trees -->
-    <delete dir="${build}"/>
-    <delete dir="${dist}"/>
-  </target>
+    <target name="build" depends="compile">
+        <mkdir dir="${dist.dir}" />
+
+        <tstamp>
+            <format property="buildDate" pattern="yyyy-MM-dd" />
+            <format property="buildTime" pattern="HH:mm:ss" />
+        </tstamp>
+
+        <jar destfile="${dist.dir}/${jar.name}" manifest="MANIFEST.MF">
+            <fileset dir="${bin.dir}" />
+
+            <manifest>
+                <attribute name="Built-By" value="${user.name}" />
+                <attribute name="Built-Date" value="${buildDate}" />
+                <attribute name="Built-Time" value="${buildTime}" />
+            </manifest>
+        </jar>
+
+    </target>
 </project>

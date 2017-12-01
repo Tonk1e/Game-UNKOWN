@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
-<project name="Joni" default="build">
+<project name="Game-UNKNOWN" default="build">
 
     <property name="src.dir" value="src" />
     <property name="bin.dir" value="target/classes" />
     <property name="dist.dir" value="target" />
-    <property name="jar.name" value="joni.jar" />
+    <property name="jar.name" value="Game-UNKNOWN.jar" />
 
     <target name="clean">
         <delete dir="${bin.dir}" />

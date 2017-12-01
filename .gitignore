@@ -2,3 +2,5 @@
 /.recommenders/
 *.project
 *.classpath
+/build/
+/dist/

@@ -1,5 +1,5 @@
 package game.objects;
 
-class MainPlayer{
+public class Ground {
 
 }

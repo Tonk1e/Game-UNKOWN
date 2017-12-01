@@ -8,6 +8,7 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 
 import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 import game.State.GameStateManager;
 
@@ -32,6 +33,15 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	
 	// State manager shiz
 	private GameStateManager gsm;
+
+	public void create_frame(){
+		JFrame window = new JFrame("Game-UNKNOWN");
+		window.setContentPane(new GamePanel());
+		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setResizable(false);
+		window.pack();
+		window.setVisible(true);
+	}
 	
 	public GamePanel() {
 		super();

@@ -1,0 +1,6 @@
+language: java
+sudo: false
+jdk:
+  - orcale7jdk
+  - orcale8jdk
+  - openjdk7

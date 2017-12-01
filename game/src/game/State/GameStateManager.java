@@ -2,6 +2,12 @@ package game.State;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import java.awt.Graphics;
+import java.awt.Dimension;
+import java.awt.Color;
+
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 public class GameStateManager {
 
@@ -10,7 +16,7 @@ public class GameStateManager {
 	
 	// Enum-like key system
 	public static final int MENUSTATE = 0;
-	public static final int LEVEL1STATE = 0;
+	public static final int NEWGAMESTATE = 1;
 	
 	public GameStateManager() {
 		
